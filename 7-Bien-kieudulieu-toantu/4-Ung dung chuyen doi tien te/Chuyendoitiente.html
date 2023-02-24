@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<input  id="Amount" type="number" size="30">
+<select id="from">
+    <option  value="VND" >Việt Nam Đồng</option>
+    <option  value="USD" >Đô la Mĩ</option>
+</select>
+
+<select id="to">
+    <option  value="USD" >Đô la Mĩ</option>
+    <option value="VND" >Việt Nam Đồng</option>
+</select>
+<button type="button" onclick="tinhtien()">Convert</button>
+<h2>Số tiền được tính là: </h2>
+<div id="ketqua">So tien la</div> <br>
+
+<script>
+    function tinhtien() {
+        let Amount = document.getElementById("Amount").value;
+        let FromC = document.getElementById("from").value;
+        let To = document.getElementById("to").value;
+        let ketqua;
+
+
+        if (FromC == "USD" && To == "VND") {
+            ketqua = "Kết quả: " + (Amount * 23000) + " Đ";
+        }
+        else if (FromC == "VND"&& To =="USD"){
+            ketqua = "Kết quả: "+ (Amount / 23000) + " $";
+        }
+        else if (FromC == "VND") {
+            ketqua = "Kết quả: " + Amount + " Đ"
+        } else {
+            ketqua = "Kết quả: " + Amount + " $"
+        }
+
+        document.getElementById("ketqua").innerHTML = ketqua;
+    }
+
+</script>
+</body>
+</html>
