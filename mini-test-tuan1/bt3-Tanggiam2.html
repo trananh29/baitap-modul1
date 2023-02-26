@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài tập tăng giảm 2 giá trị</title>
+</head>
+<body>
+<table >
+    <tr > <span id="num1">0</span></tr>
+</table>
+
+
+
+<button onclick="add2()">Up</button>
+<button onclick="sub2()">Down</button>
+<p id="num2"></p>
+<script>
+  function add2() {
+    let number=document.getElementById("num1");
+    let result= parseInt(number.innerHTML)+2;
+    number.innerHTML=result;
+
+
+  }
+  function sub2() {
+      let number=document.getElementById("num1");
+      let result= parseInt(number.innerHTML)-2;
+      number.innerHTML=result;
+
+  }
+
+</script>
+
+</body>
+</html>
